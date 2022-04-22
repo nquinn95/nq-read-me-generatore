@@ -55,15 +55,15 @@ inquirer.prompt(questions)
         return generateMarkdown(answers);
     })
     .then(data =>{
-        return fs.writeFile(data);
+        return writeToFile(data);
     })
 
 
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {
+const writeToFile = data => {
 
-    fs.writeFile(fileName, data, (err) =>
+    fs.writeFile('reademe.md', data, (err) =>
         err ? console.log(err) : console.log('Success!')
     );
 
