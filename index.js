@@ -5,9 +5,11 @@ const path = require("path")
 const generateMarkdown = require("./utils/generateMarkdown");
 const { title } = require("process");
 
+const userAnswers = inquirer.prompt(questions);
+
 
 // TODO: Create an array of questions for user input
-const questions = ["What is your github username?", "What is your email address", "What is your project title", "Please write a short project description:", "What kind of license does your project have?"];
+
 
 //what is your gituhub unsername
 //what is your email address
@@ -16,46 +18,53 @@ const questions = ["What is your github username?", "What is your email address"
 // what kind of license does your project have
 
 //prompt for the user to answer questions above
-inquirer
-    .prompt([
+const questions = [
         {
             type: "input",
             name: "githubUsername",
-            message: questions[0]
+            message: "What is your github username? "
         },
         {
             type: "input",
             name: "emailAddress",
-            message: questions[1]
+            message: "What is your email address? "
         },
         {
             type: "input",
             name: "projectTitle",
-            message: questions[2]
+            message: "What is your project title? "
         },
         {
             type: "input",
             name: "desc",
-            message: questions[3]
+            message: "Please enter a project description: "
         },
         {
             type: "input",
             name: "license",
-            message: questions [4] + `\n MIT \n Apache \n defaults to none if there is no license `,
+            message: `What license did you use? \n MIT \n Apache \n defaults to none if there is no license `,
             default: "None"
         }
+];
+    // .then((answers) => {
+    //     console.log(answers);
+    //     console.log(answers.license);
+    // })
 
-    ])
-    .then((answers) => {
-        console.log(answers);
-        console.log(answers.license);
-    })
+
+
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) {
+
+    fs.writeFile(fileName, data)
+
+}
 
 // TODO: Create a function to initialize app
-function init() {}
+function init() {
+
+}
 
 // Function call to initialize app
 init();
