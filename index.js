@@ -5,7 +5,7 @@ const path = require("path")
 const generateMarkdown = require("./utils/generateMarkdown");
 const { title } = require("process");
 
-const userAnswers = inquirer.prompt(questions);
+
 
 
 // TODO: Create an array of questions for user input
@@ -50,14 +50,25 @@ const questions = [
     //     console.log(answers);
     //     console.log(answers.license);
     // })
-
+inquirer.prompt(questions)
+    .then((answers) => {
+        return generateMarkdown(answers);
+    })
+    .then(data =>{
+        return fs.writeFile(data);
+    })
 
 
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
 
-    fs.writeFile(fileName, data)
+    fs.writeFile(fileName, data, (err) =>
+        err ? console.log(err) : console.log('Success!')
+    );
+
+
+
 
 }
 
