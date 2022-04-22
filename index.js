@@ -68,7 +68,7 @@ inquirer.prompt(questions)
 // TODO: Create a function to write README file
 const writeToFile = data => {
 
-    fs.writeFile('reademe.md', data, (err) =>
+    fs.writeFile('readme.md', data, (err) =>
         err ? console.log(err) : console.log('Success!')
     );
 
@@ -76,6 +76,12 @@ const writeToFile = data => {
 
 
 }
+
+
+
+
+
+
 
 // TODO: Create a function to initialize app
 function init() {
