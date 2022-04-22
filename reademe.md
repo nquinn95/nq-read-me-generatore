@@ -1,20 +1,26 @@
-# test
-  ## Table of Contents
+# Generator
+  # Table of Contents
 
--github username
--email address
--project title
--project description
--license
+-[Contributors](#Contributors)
+- [Github Username](#Github-Username)
+- [Email Address](#Email-Address)
+- [Project Description](#Project-Description)
+- [License](#License)
 
-# Github Username
-test
+# Contributors
+Nick and John
 
-# Email Address
-test
+# Github-Username
+nquin
 
-# Project description
-test test test test test
+# Email-Address
+test@email.com
+
+# Project-Description
+This generates ar ead me
 
 # License
-[![License: Apache](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)(https://opensource.org/licenses/MIT)
+## License
+
+    This project is licensed under MIT

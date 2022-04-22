@@ -32,7 +32,7 @@ function renderLicenseBadge(license) {
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
   if (license !== "None"){
-    return `## License;
+    return `## License
 
     This project is licensed under ${license}`
   }
@@ -40,27 +40,34 @@ function renderLicenseSection(license) {
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
+
   let whichLic = renderLicenseBadge(data.license);
+  let licSection = renderLicenseSection(data.license);
+
   return `# ${data.projectTitle}
-  ## Table of Contents
+  # Table of Contents
 
-### -github username
-### -email address
--project title
--project description
--license
+- [Contributors](#Contributors)
+- [Github Username](#Github-Username)
+- [Email Address](#Email-Address)
+- [Project Description](#Project-Description)
+- [License](#License)
 
-# Github Username
+# Contributors
+${data.contributors}
+
+# Github-Username
 ${data.githubUsername}
 
-# Email Address
+# Email-Address
 ${data.emailAddress}
 
-# Project description
+# Project-Description
 ${data.desc}
 
 # License
 ${whichLic}
+${licSection}
 `;
 }
 

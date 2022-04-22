@@ -44,6 +44,11 @@ const questions = [
             name: "license",
             message: `What license did you use? \n MIT \n Apache \n defaults to none if there is no license `,
             default: "None"
+        },
+        {
+            type: "input",
+            name: "contributors",
+            message: "List all contributors: "
         }
 ];
     // .then((answers) => {
